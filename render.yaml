@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: 1ife
+    env: static
+    buildCommand: ""
+    publishPath: /
+    # No build command needed for static HTML/CSS/JS site
+    # Publish path is root directory since index.html is at root

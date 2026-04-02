@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="1ife Projects - Explore our innovative solutions making a difference in communities worldwide.">
     <title>Projects - 1ife</title>
+    <meta http-equiv="refresh" content="3;url=index.html#projects">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,154 +31,93 @@
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 1.5rem 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            text-decoration: none;
-            color: var(--text);
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--text);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 3rem;
-        }
-
-        header {
             text-align: center;
-            margin-bottom: 4rem;
+            padding: 2rem;
         }
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        .redirect-message {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .redirect-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .redirect-message h1 {
+            font-size: 2rem;
             margin-bottom: 1rem;
-        }
-
-        h1 span {
             background: linear-gradient(135deg, var(--accent), #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .subtitle {
+        .redirect-message p {
+            font-size: 1.25rem;
             color: var(--muted);
-            font-size: 1.125rem;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 2rem;
         }
 
-        .coming-soon {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+        .redirect-links {
             margin-top: 2rem;
         }
 
-        .coming-soon-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .redirect-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: color 0.2s;
         }
 
-        .coming-soon h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        .redirect-links a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
         }
 
-        .coming-soon p {
-            color: var(--muted);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            color: var(--muted);
-            font-size: 0.75rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 640px) {
-            nav {
-                padding: 1rem 1.5rem;
+        @media (max-width: 480px) {
+            .redirect-message h1 {
+                font-size: 1.75rem;
             }
-            .nav-links {
-                display: none;
-            }
-            main {
-                padding: 2rem 1.5rem;
-            }
-            h1 {
-                font-size: 2rem;
+
+            .redirect-message p {
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">1ife</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Mission</a></li>
-            <li><a href="index.html">Values</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <header>
-            <h1>Our <span>Projects</span></h1>
-            <p class="subtitle">Building the future, one life at a time. Here's what we're working on.</p>
-        </header>
-
-        <div class="coming-soon">
-            <div class="coming-soon-icon">🚀</div>
-            <h2>Projects Coming Soon</h2>
-            <p>We're building something amazing. Stay tuned for updates.</p>
+    <div class="redirect-message">
+        <div class="redirect-icon">🚀</div>
+        <h1>Projects - 1ife</h1>
+        <p>Our projects page has been moved to our main site for a better experience.</p>
+        <p>You will be redirected to the Projects section in <span class="countdown">3</span> seconds...</p>
+        <div class="redirect-links">
+            <a href="index.html#projects">Go to Projects Section →</a><br>
+            <a href="index.html">Return to Homepage</a>
         </div>
-    </main>
+    </div>
 
-    <footer>
-        &copy; 2026 1ife. All rights reserved.
-    </footer>
+    <script>
+        // Countdown timer
+        let countdown = 3;
+        const countdownElement = document.querySelector('.countdown');
+
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = 'index.html#projects';
+            }
+        }, 1000);
+    </script>
 </body>
 </html>

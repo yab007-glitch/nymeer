@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="1ife - Building meaningful solutions in happiness, entertainment, health, and impact. Founded by the Bheekun Brothers.">
     <title>1ife - 1+life=one life</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,10 +56,21 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: -0.02em;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            color: var(--text);
         }
 
         .logo span {
             color: var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover span {
+            transform: scale(1.1);
         }
 
         .nav-links {
@@ -128,7 +140,17 @@
             gap: 0.5rem;
             color: var(--muted);
             font-size: 0.75rem;
+            animation: bounce 2s infinite, pulse 3s ease-in-out infinite;
+            opacity: 0.9;
+        }
+
+        .scroll-indicator svg {
             animation: bounce 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
 
         @keyframes bounce {
@@ -187,12 +209,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .founders-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
         }
 
         .founders-icon svg {
             width: 20px;
             height: 20px;
             color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .founders-icon:hover svg {
+            transform: rotate(5deg) scale(1.1);
         }
 
         .founders span {
@@ -230,6 +263,13 @@
         .value-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1);
+            color: var(--accent);
         }
 
         .value-card h3 {
@@ -337,16 +377,197 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Projects Section Styles */
+        #projects {
+            background: var(--bg);
+        }
+
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced CTA Button Animation */
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            transform: rotate(30deg);
+            transition: transform 0.5s ease;
+            opacity: 0;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
+            transform: rotate(30deg) translate(50%, 50%);
+        }
+
+        /* Enhanced Nav Link Animations */
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), #a855f7);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        }
+
+        /* Enhanced Hero Text Animation */
+        h1 span {
+            background-size: 200% 200%;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtle Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.02) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Section Subtext */
+        .section-subtext {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* Active Section Indicator in Nav */
+        .nav-links a.active {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* Enhanced CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .cta-button.primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cta-subtext {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-top: 1.5rem;
+            max-width: 600px;
+            text-align: center;
+        }
+        /* Coming Soon Section */
+        .coming-soon {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin: 4rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .coming-soon-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .coming-soon:hover .coming-soon-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .coming-soon h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon p {
+            color: var(--muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo">1ife</div>
+        <div class="logo"><span>1</span>ife</div>
         <ul class="nav-links">
             <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#mission">Mission</a></li>
             <li><a href="#values">Values</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
 
@@ -354,7 +575,7 @@
     <section id="hero">
         <div class="hero-content">
             <h1><span>1</span>+life=<span>one life</span></h1>
-            <p class="subtitle">Empowering every individual to live their fullest potential.</p>
+            <p class="subtitle">Empowering every individual to live their fullest potential through innovative solutions that create lasting impact.</p>
         </div>
         <div class="scroll-indicator">
             <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -371,6 +592,9 @@
             <h2>Who We Are</h2>
             <p class="mission-text">
                 We are <strong>1ife</strong>—founded by the <strong>Bheekun Brothers</strong> with an unwavering belief: every life holds infinite potential. We exist to unlock it.
+            </p>
+            <p class="mission-text">
+                Born from a shared vision to create meaningful change, the Bheekun Brothers embarked on this journey after witnessing firsthand how small innovations could transform communities. Their background in technology, design, and social entrepreneurship uniquely positions 1ife to bridge the gap between cutting-edge innovation and human-centered solutions.
             </p>
             <p class="mission-text">
                 More than a company, we're a movement. A commitment to creating real, lasting impact through products and experiences that inspire, uplift, and transform. From joy to wellness, entertainment to innovation—we deliver value that resonates.
@@ -399,22 +623,22 @@
             <div class="value-card">
                 <div class="value-icon">&#9786;</div>
                 <h3>Happiness</h3>
-                <p>We believe joy is a fundamental right. Every product we create sparks moments of genuine happiness that enrich lives.</p>
+                <p>We believe joy is a fundamental right. From playful apps that bring smiles to wellness programs that elevate mood, we create experiences that spark genuine happiness and enrich daily lives.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">&#127916;</div>
                 <h3>Entertainment</h3>
-                <p>Life should be engaging. We craft experiences that captivate, inspire, and bring people together through shared moments.</p>
+                <p>Life should be engaging. We craft immersive experiences that captivate audiences, inspire creativity, and bring people together through shared moments of joy and wonder.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">&#9889;</div>
                 <h3>Health</h3>
-                <p>True wealth begins with wellbeing. We empower individuals to live healthier, more balanced, more fulfilling lives.</p>
+                <p>True wealth begins with wellbeing. We empower individuals to live healthier, more balanced lives through innovative health technologies, wellness programs, and preventive care solutions.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">&#9733;</div>
                 <h3>Impact</h3>
-                <p>Every action we take creates ripples of positive change. We measure success not by profits, but by lives transformed.</p>
+                <p>Every action we take creates ripples of positive change. We measure success not by profits, but by lives transformed—tracking real-world impact through user outcomes, community feedback, and measurable improvements in quality of life.</p>
             </div>
         </div>
     </section>
@@ -430,13 +654,31 @@
                 </p>
                 <br>
                 <p>
-                    Our moto <strong>"1 + life = one life"</strong> isn't just words. It's our compass. Every product, every decision, every step forward is driven by the question: <em>does this make life better?</em>
+                    Founded in 2023 by the Bheekun Brothers, 1ife began as a passionate response to the world's need for meaningful innovation that serves humanity. What started as late-night conversations about leveraging technology for good has evolved into a multidisciplinary team of designers, engineers, and visionaries dedicated to creating solutions that truly matter.
                 </p>
                 <br>
                 <p>
-                    We are relentless in our pursuit of excellence. Curious. Courageous. Committed. Join us as we redefine what's possible—one life at a time.
+                    Our motto <strong>"1 + life = one life"</strong> isn't just words. It's our compass. Every product, every decision, every step forward is driven by the question: <em>does this make life better?</em>
+                </p>
+                <br>
+                <p>
+                    We are relentless in our pursuit of excellence. Curious. Courageous. Committed. Our culture fosters continuous learning, bold experimentation, and compassionate execution. Join us as we redefine what's possible—one life at a time.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-content">
+            <span class="section-label">Our Work</span>
+            <h2>Featured Projects</h2>
+            <p class="section-subtext">Explore our innovative solutions that are making a difference in communities worldwide.</p>
+        </div>
+        <div class="coming-soon">
+            <div class="coming-soon-icon">🚀</div>
+            <h2>Projects Coming Soon</h2>
+            <p>We're building something amazing. Stay tuned for updates.</p>
         </div>
     </section>
 
@@ -445,12 +687,21 @@
         <div class="cta-box">
             <h2>The Future Starts Now</h2>
             <p>We're not just building a company—we're building a legacy. Every great story has a beginning. What's yours?</p>
-            <a href="#" class="cta-button">
-                Join the Journey
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-            </a>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button primary">
+                    Explore Our Projects
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+                <a href="#" class="cta-button secondary">
+                    Join the Journey
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="cta-subtext">Join thousands of individuals who are already experiencing the 1ife difference.</p>
         </div>
     </section>
 
