@@ -4,5 +4,9 @@
   "outputDirectory": ".",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/404", "dest": "/404.html" }
   ]
 }
