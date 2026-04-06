@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://1ife.com/sitemap.xml
+Sitemap: https://nymeer.com/sitemap.xml

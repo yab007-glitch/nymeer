@@ -1,12 +1,12 @@
-# 1ife
+# NYMEER
 
-**1 + life = one life**
+**A Whole New Sea of Possibilities**
 
-Empowering every individual to live their fullest potential through innovative solutions that create lasting impact.
+Nimble innovation, endless possibilities. Building meaningful solutions in happiness, entertainment, health, and impact.
 
 ## About
 
-Founded by the Bheekun Brothers, 1ife is a movement dedicated to creating meaningful change through products and experiences that inspire, uplift, and transform. Our focus areas:
+Founded by the Bheekun Brothers, NYMEER is a movement dedicated to creating meaningful change through products and experiences that inspire, uplift, and transform. Our focus areas:
 
 - **Happiness** — Joy is a fundamental right
 - **Entertainment** — Engaging experiences that captivate
@@ -34,4 +34,4 @@ Push to main branch — Render auto-deploys.
 
 ---
 
-© 2026 1ife. Founded by the Bheekun Brothers.
+© 2026 NYMEER. Founded by the Bheekun Brothers.

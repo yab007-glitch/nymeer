@@ -160,7 +160,7 @@ cookieAccept.addEventListener('click', () => {
     const script = document.createElement('script');
     script.defer = true;
     script.src = 'https://plausible.io/js/script.js';
-    script.setAttribute('data-domain', '1ife.com');
+    script.setAttribute('data-domain', 'nymeer.com');
     document.head.appendChild(script);
 });
 
