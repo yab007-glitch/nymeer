@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vitum-v1';
+const CACHE_NAME = 'nymeer-v1';
 const ASSETS = [
   '/',
   '/index.html',
