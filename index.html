@@ -252,10 +252,12 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-        var theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
-        document.querySelector('.icon-sun').style.display = theme === 'light' ? 'none' : 'block';
-        document.querySelector('.icon-moon').style.display = theme === 'light' ? 'block' : 'none';
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+            document.querySelector('.icon-sun').style.display = t === 'light' ? 'none' : 'block';
+            document.querySelector('.icon-moon').style.display = t === 'light' ? 'block' : 'none';
+        })();
     </script>
 </body>
 </html>

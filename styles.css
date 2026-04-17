@@ -133,7 +133,6 @@ section { min-height: 100vh; display: flex; flex-direction: column; justify-cont
 .hero-content { max-width: 800px; }
 
 h1 { font-size: clamp(3rem, 12vw, 7rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-bottom: 1.5rem; }
-@keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
 .subtitle { font-size: 1.25rem; color: var(--muted); margin-bottom: 2rem; }
 
@@ -259,7 +258,7 @@ footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.75
 
 @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links, .nav-social { display: none; }
+    .nav-links { display: none; }
     .hamburger { display: flex; }
     section { padding: 4rem 1.5rem; }
     .values-grid { grid-template-columns: repeat(2, 1fr); }
