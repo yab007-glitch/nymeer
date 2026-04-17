@@ -86,37 +86,6 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-const newsletterForm = document.getElementById('newsletter-form');
-const newsletterSuccess = document.getElementById('newsletter-success');
-const newsletterError = document.getElementById('newsletter-error');
-
-newsletterForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = newsletterForm.querySelector('.newsletter-btn');
-    btn.disabled = true;
-    btn.textContent = 'Subscribing...';
-
-    try {
-        const res = await fetch(newsletterForm.action, {
-            method: 'POST',
-            body: new FormData(newsletterForm),
-            headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-            newsletterForm.style.display = 'none';
-            newsletterSuccess.classList.add('show');
-            newsletterError.classList.remove('show');
-        } else {
-            throw new Error('Failed');
-        }
-    } catch {
-        newsletterError.classList.add('show');
-        newsletterError.textContent = 'Something went wrong. Please try again.';
-        btn.disabled = false;
-        btn.textContent = 'Subscribe';
-    }
-});
-
 const contactForm = document.getElementById('contact-form');
 const contactSuccess = document.getElementById('contact-success');
 
