@@ -16,7 +16,7 @@ Founded by the Bheekun Brothers, NYMEER is a movement dedicated to creating mean
 ## Tech Stack
 
 - Pure HTML5, CSS3, JavaScript
-- Deployed on Render (static site)
+- Deployed on Vercel (static site)
 
 ## Development
 
@@ -30,7 +30,7 @@ open index.html
 
 ## Deployment
 
-Push to main branch — Render auto-deploys.
+Push to main branch — Vercel auto-deploys.
 
 ---
 

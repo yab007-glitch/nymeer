@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nymeer-v1';
+const CACHE_NAME = 'nymeer-v2';
 const ASSETS = [
   '/',
   '/index.html',

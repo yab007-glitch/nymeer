@@ -19,14 +19,14 @@
     <meta property="og:url" content="https://nymeer.com/">
     <meta property="og:title" content="NYMEER - A Whole New Sea of Possibilities">
     <meta property="og:description" content="Nimble innovation, endless possibilities. Building meaningful solutions in happiness, entertainment, health, and impact. Founded by the Bheekun Brothers.">
-    <meta property="og:image" content="/og-image.svg">
+    <meta property="og:image" content="/og-image.png">
     <meta property="og:site_name" content="NYMEER">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://nymeer.com/">
     <meta name="twitter:title" content="NYMEER - A Whole New Sea of Possibilities">
     <meta name="twitter:description" content="Nimble innovation, endless possibilities. Building meaningful solutions in happiness, entertainment, health, and impact.">
-    <meta name="twitter:image" content="/og-image.svg">
+    <meta name="twitter:image" content="/og-image.png">
 
     <title>NYMEER - A Whole New Sea of Possibilities</title>
     <link rel="canonical" href="https://nymeer.com/">
@@ -35,7 +35,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="/fonts/inter.css" rel="stylesheet">
 
-    <script src="/sw.js"></script>
     <script src="/main.js" defer></script>
 </head>
 <body>
@@ -176,9 +175,18 @@
             <h2 class="animate-on-scroll delay-1">Featured Projects</h2>
             <p class="section-subtext animate-on-scroll delay-2">Explore our innovative solutions that are making a difference in communities worldwide.</p>
         </div>
-        <div class="coming-soon animate-on-scroll delay-3">
+        <div class="projects-grid">
+            <a href="https://herbally.app" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll delay-3">
+                <div class="project-status live">Live</div>
+                <div class="project-icon" aria-hidden="true">&#127807;</div>
+                <h3>Herbally</h3>
+                <p>Your go-to herbal wellness companion. Discover natural remedies, track your wellness journey, and embrace a healthier lifestyle.</p>
+                <span class="project-link">Visit herbally.app <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+            </a>
+        </div>
+        <div class="coming-soon animate-on-scroll delay-4">
             <div class="coming-soon-icon" aria-hidden="true">&#128640;</div>
-            <h2>Projects Coming Soon</h2>
+            <h2>More Projects Coming Soon</h2>
             <p>We're building something amazing. Stay tuned for updates.</p>
         </div>
     </section>
@@ -265,176 +273,10 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').catch(() => {});
-        }
-
-        const theme = localStorage.getItem('theme') || 'dark';
+        var theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
         document.querySelector('.icon-sun').style.display = theme === 'light' ? 'none' : 'block';
         document.querySelector('.icon-moon').style.display = theme === 'light' ? 'block' : 'none';
-
-        const themeToggle = document.querySelector('.theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-            const newTheme = isLight ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            document.querySelector('.icon-sun').style.display = newTheme === 'light' ? 'none' : 'block';
-            document.querySelector('.icon-moon').style.display = newTheme === 'light' ? 'block' : 'none';
-        });
-
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-        const backToTop = document.querySelector('.back-to-top');
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        hamburger.addEventListener('click', () => {
-            const isOpen = hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', isOpen);
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        for (let i = 0; i < mobileLinks.length; i++) {
-            mobileLinks[i].addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            for (let i = 0; i < entries.length; i++) {
-                if (entries[i].isIntersecting) {
-                    entries[i].target.classList.add('visible');
-                }
-            }
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        for (let i = 0; i < animatedElements.length; i++) {
-            observer.observe(animatedElements[i]);
-        }
-
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            scrollIndicator.classList.toggle('hidden', scrollY > 100);
-            backToTop.classList.toggle('visible', scrollY > 500);
-
-            let current = '';
-            for (let i = 0; i < sections.length; i++) {
-                const top = sections[i].offsetTop - 100;
-                if (scrollY >= top) {
-                    current = sections[i].getAttribute('id');
-                }
-            }
-
-            for (let i = 0; i < navLinks.length; i++) {
-                navLinks[i].classList.remove('active');
-                if (navLinks[i].getAttribute('href') === `#${current}`) {
-                    navLinks[i].classList.add('active');
-                }
-            }
-            for (let i = 0; i < mobileLinks.length; i++) {
-                mobileLinks[i].classList.remove('active');
-                if (mobileLinks[i].getAttribute('href') === `#${current}`) {
-                    mobileLinks[i].classList.add('active');
-                }
-            }
-        }, { passive: true });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        const newsletterForm = document.getElementById('newsletter-form');
-        const newsletterSuccess = document.getElementById('newsletter-success');
-        const newsletterError = document.getElementById('newsletter-error');
-
-        newsletterForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = newsletterForm.querySelector('.newsletter-btn');
-            btn.disabled = true;
-            btn.textContent = 'Subscribing...';
-
-            try {
-                const res = await fetch(newsletterForm.action, {
-                    method: 'POST',
-                    body: new FormData(newsletterForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (res.ok) {
-                    newsletterForm.style.display = 'none';
-                    newsletterSuccess.classList.add('show');
-                    newsletterError.classList.remove('show');
-                } else {
-                    throw new Error('Failed');
-                }
-            } catch {
-                newsletterError.classList.add('show');
-                newsletterError.textContent = 'Something went wrong. Please try again.';
-                btn.disabled = false;
-                btn.textContent = 'Subscribe';
-            }
-        });
-
-        const contactForm = document.getElementById('contact-form');
-        const contactSuccess = document.getElementById('contact-success');
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('.form-submit');
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-
-            try {
-                const res = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: new FormData(contactForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (res.ok) {
-                    contactForm.reset();
-                    contactSuccess.classList.add('show');
-                    btn.style.display = 'none';
-                } else {
-                    throw new Error('Failed');
-                }
-            } catch {
-                btn.disabled = false;
-                btn.textContent = 'Send Message';
-                alert('Something went wrong. Please try again or email us directly.');
-            }
-        });
-
-        const cookieBanner = document.getElementById('cookie-banner');
-        const cookieAccept = document.getElementById('cookie-accept');
-        const cookieDecline = document.getElementById('cookie-decline');
-
-        if (!localStorage.getItem('cookieConsent')) {
-            setTimeout(() => cookieBanner.classList.add('show'), 1500);
-        }
-
-        cookieAccept.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'accepted');
-            cookieBanner.classList.remove('show');
-            const script = document.createElement('script');
-            script.defer = true;
-            script.src = 'https://plausible.io/js/script.js';
-            script.setAttribute('data-domain', 'nymeer.com');
-            document.head.appendChild(script);
-        });
-
-        cookieDecline.addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'declined');
-            cookieBanner.classList.remove('show');
-        });
     </script>
 </body>
 </html>

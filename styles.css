@@ -198,6 +198,16 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02e
 .about-box strong { color: var(--text); }
 
 #projects { background: var(--bg); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 900px; width: 100%; margin-top: 3rem; }
+.project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-decoration: none; color: var(--text); transition: border-color 0.3s, transform 0.3s; display: block; position: relative; }
+.project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.project-status { position: absolute; top: 1rem; right: 1rem; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.05em; }
+.project-status.live { background: rgba(34, 197, 94, 0.15); color: var(--success); }
+.project-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.project-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+.project-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+.project-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--accent); }
+.project-card:hover .project-link { text-decoration: underline; }
 .coming-soon { text-align: center; padding: 4rem 2rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; margin: 2rem 0; transition: all 0.3s; max-width: 600px; }
 .coming-soon:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
 .coming-soon-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; transition: transform 0.3s; }
@@ -281,7 +291,7 @@ footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.75
 
 @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links, .nav-social, .theme-toggle { display: none; }
+    .nav-links, .nav-social { display: none; }
     .hamburger { display: flex; }
     section { padding: 4rem 1.5rem; }
     .values-grid { grid-template-columns: repeat(2, 1fr); }
